@@ -19,7 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/product', ProductController::class.'@index');
-Route::post('/product', ProductController::class.'@store');
-Route::put('/product/{id}', ProductController::class.'@update');
-Route::delete('/product/{id}', ProductController::class.'@destroy');
+Route::get('/product', ProductController::class . '@index');
+Route::post('/product/new', ProductController::class . '@store');
+Route::put('/product/update/{id}', ProductController::class . '@update');
+Route::delete('/product/delete/{id}', ProductController::class . '@destroy');
+Route::get('/product/show/{id}', ProductController::class . '@show');

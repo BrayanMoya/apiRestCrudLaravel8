@@ -13,8 +13,11 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $faker = $this->faker;
         return [
-            //
+            'notes' => $faker->sentence(),
+            'cost' => $faker->randomFloat(2, 10000, 500000),
+            'stock' => $faker->randomNumber(3)
         ];
     }
 }
